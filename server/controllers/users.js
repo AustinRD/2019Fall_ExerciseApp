@@ -1,0 +1,21 @@
+const express = require('express');
+const users = require('../models/users');
+
+const app = express.Router();
+
+app.get('/', (req, res) => res.send("In server/users")),
+
+app.post('/addUser', (req, res) => {
+    users.addUser(req.param('username'), req.param('password'), req.param('firstName'), req.param('lastName'), req.param('age'), req.param('gender'), req.param('height'), req.param('weight'), res);
+}),
+app.post('/removeUser', (req, res) => {
+    users.deleteUser(req.param('userID'), res);
+}),
+app.post('/getUser', (req, res) => {
+    users.getUser(req.param('userID'), res);
+}),
+app.post('/allUsers', (req, res) => {
+    users.getAllUsers(res);
+});
+
+module.exports = app;

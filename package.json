@@ -1,0 +1,26 @@
+{
+  "name": "2019fall_exerciseapp",
+  "version": "1.0.0",
+  "description": "Track exercise progress, and compare with friends.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon server/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AustinRD/2019Fall_ExerciseApp.git"
+  },
+  "author": "Austin DiLeonardo",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AustinRD/2019Fall_ExerciseApp/issues"
+  },
+  "homepage": "https://github.com/AustinRD/2019Fall_ExerciseApp#readme",
+  "dependencies": {
+    "express": "~4.16.4"
+  },
+  "devDependencies": {
+    "nodemon": "~1.18.10"
+  }
+}
