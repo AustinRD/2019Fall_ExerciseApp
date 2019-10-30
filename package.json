@@ -4,21 +4,24 @@
   "description": "Track exercise progress, and compare with friends.",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon server/index.js"
+    "start": "node server",
+    "server": "nodemon server",
+    "client": "npm run serve --prefix client",
+    "dev": "concurrently \"npm run server\" \"npm run client\""
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/AustinRD/2019Fall_ExerciseApp.git"
   },
   "author": "Austin DiLeonardo",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/AustinRD/2019Fall_ExerciseApp/issues"
   },
   "homepage": "https://github.com/AustinRD/2019Fall_ExerciseApp#readme",
   "dependencies": {
-    "express": "~4.16.4"
+    "express": "~4.16.4",
+    "concurrently": "^4.1.1"
   },
   "devDependencies": {
     "nodemon": "~1.18.10"

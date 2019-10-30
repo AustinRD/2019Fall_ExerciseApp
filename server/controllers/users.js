@@ -3,10 +3,10 @@ const users = require('../models/users');
 
 const app = express.Router();
 
-app.get('/', (req, res) => res.send("In server/users")),
+app.get('/', (req, res) => res.send(users)),
 
 app.post('/addUser', (req, res) => {
-    users.addUser(req.param('username'), req.param('password'), req.param('firstName'), req.param('lastName'), req.param('age'), req.param('gender'), req.param('height'), req.param('weight'), res);
+    users.addUser(req.param('username'), req.param('password'), req.param('firstName'), req.param('lastName'), req.param('age'), req.param('height'), req.param('weight'), req.param('gender'), res);
 }),
 app.post('/removeUser', (req, res) => {
     users.deleteUser(req.param('userID'), res);

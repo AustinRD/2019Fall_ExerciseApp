@@ -1,25 +1,43 @@
 const users = [
     {
         id: 0,
-        username: "test", 
-        password: "test",
-        firstName: "Test",
-        lastName: "Testing",
-        age: "99",
-        weight: "999",
-        height: "9\'9\"",
-        gender: "male", 
+        username: "Username", 
+        password: "Password",
+        firstName: "First Name",
+        lastName: "Last Name",
+        age: "Age",
+        height: "Height",
+        weight: "Weight",
+        gender: "Gender", 
         exerciseList: [
             {
-                date: "10/23/2019",
-                exercise: "Sit-Ups",
-                amount: 10
+                date: "Date",
+                exercise: "Sample Exercise",
+                amount: "10 Reps/Mins/Laps"
+            }
+        ]
+    },
+    {
+        id: 1,
+        username: "Username1", 
+        password: "Password1",
+        firstName: "First Name1",
+        lastName: "Last Name1",
+        age: "Age1",
+        height: "Height1",
+        weight: "Weight1",
+        gender: "Gender1", 
+        exerciseList: [
+            {
+                date: "Date",
+                exercise: "Sample Exercise",
+                amount: "10 Reps/Mins/Laps"
             }
         ]
     }
 ];
 const util = {
-    addUser(username, password, firstName, lastName, age, weight, height, gender, output)
+    addUser(username, password, firstName, lastName, age, height, weight, gender, output)
     {
         id = users.length;
         var newUser = 
@@ -30,8 +48,8 @@ const util = {
             firstName: firstName,
             lastName: lastName,
             age: age,
-            weight: weight,
             height: height,
+            weight: weight,
             gender: gender
         };
         users.push(newUser);
