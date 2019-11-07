@@ -20,12 +20,10 @@
   },
   "homepage": "https://github.com/AustinRD/2019Fall_ExerciseApp#readme",
   "dependencies": {
-    "bulma": "^0.8.0",
     "concurrently": "^4.1.1",
     "express": "~4.16.4"
   },
   "devDependencies": {
-    "@fortawesome/fontawesome-free": "^5.11.2",
     "nodemon": "~1.18.10"
   }
 }
