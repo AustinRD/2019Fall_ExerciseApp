@@ -7,7 +7,9 @@ Vue.use(VueRouter);
 
 const routes = [
   { path: '/', name: 'home', component: Home},
-  { path: '/profile', name: 'profile', component: Profile}
+  { path: '/profile', name: 'profile', component: Profile},
+  { path: '/login', name: 'login', component: () => import('../views/Login.vue')},
+  { path: '/about', name: 'about', component: () => import('../views/About.vue')},
 ];
 
 const router = new VueRouter({
