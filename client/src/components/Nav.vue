@@ -1,6 +1,7 @@
 <template>
   <nav class="navbar" role="navigation" aria-label="main navigation">
     <div class="navbar-brand">
+
       <router-link exact-active-class="active" class="navbar-item" to="/">
         <i class="fas fa-home fa-pull-left"></i>
         Home
@@ -27,7 +28,7 @@
           Profile
         </router-link>
         <router-link exact-active-class="active" class="navbar-item" to="/about">
-          <i class="fas fa-user-tie fa-pull-left"></i>
+          <i class="fas fa-question-circle fa-pull-left"></i>
           About
         </router-link>
       </div>
@@ -35,7 +36,7 @@
       <div class="navbar-end">
         <div class="navbar-item">
           <div class="buttons">
-            <a class="button is-primary">
+            <a href = "./signup" class="button is-danger">
               <strong>Sign up</strong>
             </a>
             <a href = "./login" class="button is-light">Log in</a>
@@ -58,11 +59,12 @@ export default {
 
 <style>
 .active {
-  background-color: aliceblue;
+  background-color: red;
+  color:black;
   font-weight: bold;
 }
 .kind-of-active {
-  background-color: rgb(137, 199, 253);
+  background-color: darkred;
   font-weight: 100;
 }
 </style>
