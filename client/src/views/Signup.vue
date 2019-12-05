@@ -40,6 +40,12 @@
       </div>
 
       <div class="field is-grouped is-grouped-centered">
+        <div class="control has-icons-left has-icons-right">
+          <input style="width:20em;" class="input" type="text" placeholder="Gender" />
+        </div>
+      </div>
+
+      <div class="field is-grouped is-grouped-centered">
         <div class="control">
           <button class="button is-link">Submit</button>
         </div>
