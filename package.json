@@ -2,10 +2,10 @@
   "name": "2019fall_exerciseapp",
   "version": "1.0.0",
   "description": "Track exercise progress, and compare with friends.",
-  "main": "server.js",
+  "main": "server",
   "scripts": {
-    "start": "node server",
-    "server": "nodemon server",
+    "start": "node ./server/index.js",
+    "server": "nodemon ./server/index.js",
     "client": "npm run serve --prefix client",
     "dev": "concurrently \"npm run server\" \"npm run client\""
   },
@@ -21,7 +21,8 @@
   "homepage": "https://github.com/AustinRD/2019Fall_ExerciseApp#readme",
   "dependencies": {
     "concurrently": "^4.1.1",
-    "express": "~4.16.4"
+    "express": "~4.16.4",
+    "morgan": "^1.9.1"
   },
   "devDependencies": {
     "nodemon": "~1.18.10"
