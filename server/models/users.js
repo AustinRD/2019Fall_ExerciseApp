@@ -1,108 +1,56 @@
 const users = [
     {
         id: 0,
-        username: "Username", 
-        password: "Password",
-        firstName: "First Name",
-        lastName: "Last Name",
-        age: "Age",
-        height: "Height",
-        weight: "Weight",
-        gender: "Gender", 
-        exerciseList: [
+        username: 'test',
+        password: 'password',
+        firstname: 'Tes',
+        lastname: 'ting',
+        height: 'tall',
+        weight: 'average',
+        gender: 'male',
+        age: 99,
+        exerciseLog: [
             {
-                date: "Date",
-                exercise: "Sample Exercise",
-                amount: "10 Reps/Mins/Laps"
+                date: '11-12-1314',
+                time: '1:11',
+                exercise: 'Squats',
+                amount: '20 reps'
+            },
+            {
+                date: '12-13-1415',
+                time: '2:22',
+                exercise: 'Jog',
+                amount: '20 min'
             }
-        ]
+        ],
+        friendsList: ["Friend", "Friend2"]
     },
     {
         id: 1,
-        username: "Username1", 
-        password: "Password1",
-        firstName: "First Name1",
-        lastName: "Last Name1",
-        age: "Age1",
-        height: "Height1",
-        weight: "Weight1",
-        gender: "Gender1", 
-        exerciseList: [
+        username: 'test2',
+        password: 'password',
+        firstname: 'Test',
+        lastname: 'ing',
+        height: 'short',
+        weight: 'average',
+        gender: 'male',
+        age: 99,
+        exerciseLog: [
             {
-                date: "Date",
-                exercise: "Sample Exercise",
-                amount: "10 Reps/Mins/Laps"
+                date: '11-12-1314',
+                time: '1:11',
+                exercise: 'Squats',
+                amount: '20 reps'
+            },
+            {
+                date: '12-13-1415',
+                time: '2:22',
+                exercise: 'Jog',
+                amount: '20 min'
             }
-        ]
+        ],
+        friendsList: ["Friend3", "test"]
     }
 ];
-const util = {
-    addUser(username, password, firstName, lastName, age, height, weight, gender, output)
-    {
-        id = users.length;
-        var newUser = 
-        {
-            id: id,
-            username: username,
-            password: password,
-            firstName: firstName,
-            lastName: lastName,
-            age: age,
-            height: height,
-            weight: weight,
-            gender: gender
-        };
-        users.push(newUser);
-        output.send(newUser);
-    },
-    getUser(userID, output)
-    {
-        output.send(users[userID]);
-    },
-    getAllUsers(output)
-    {
-        output.send(users);
-    },
-    editUser(userID, username, password, firstName, lastName, age, weight, height, gender, output)
-    {
-        if(username != null)
-        {
-            users[userID].username = username;
-        }
-        if(password != null)
-        {
-            users[userID].password = password;
-        }
-        if(firstName != null)
-        {
-            users[userID].firstName = firstName;
-        }
-        if(lastName != null)
-        {
-            users[userID].lastName = lastName;
-        }
-        if(age != null)
-        {
-            users[userID].age = age;
-        }
-        if(weight != null)
-        {
-            users[userID].weight = weight;
-        }
-        if(height != null)
-        {
-            users[userID].height = height;
-        }
-        if(gender != null)
-        {
-            users[userID].gender = gender;
-        }
-        output.send(users[userID]);
-    },
-    deleteUser(userID, output)
-    {
-        output.send(users[userID].firstName + " removed.");
-        users.splice(userID, 1);
-    }
-}
-module.exports = util;
+
+module.exports = users;
