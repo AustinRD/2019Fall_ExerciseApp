@@ -23,7 +23,11 @@
 
     <div id="navbarBasicExample" class="navbar-menu" :class="{'is-active': isOpen}">
       <div class="navbar-start">
-        <router-link exact-active-class="active" class="navbar-item" to="/profile">
+        <router-link exact-active-class="active" class="navbar-item" to="/profile" v-if="signedIn">
+          <i class="fas fa-user-tie fa-pull-left"></i>
+          Profile
+        </router-link>
+        <router-link exact-active-class="active" class="navbar-item" to="/login" v-else>
           <i class="fas fa-user-tie fa-pull-left"></i>
           Profile
         </router-link>

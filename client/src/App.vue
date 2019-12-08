@@ -13,15 +13,32 @@ import Nav from './components/Nav.vue'
 import Footer from './components/Footer.vue'
 
 export default {
+  name: "app",
   components: 
   {
     Header,
     Nav,
     Footer
+  },
+  data() {
+    return {
+      loggedIn: false,
+      username: ""
+    };
+  },
+  methods: {
+    singingIn: function(username) {
+      this.loggedIn = true;
+      this.username = username;
+    },
+    signingOut: function() {
+      this.loggedIn = false;
+      this.username = "";
+      this.$router.replace({ path: "/" });
+    }
   }
-}
+};
 </script>
 
 <style>
-
 </style>

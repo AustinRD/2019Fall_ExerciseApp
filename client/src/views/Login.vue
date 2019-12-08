@@ -3,38 +3,54 @@
     <ul class="panel">
       <p class="panel-heading">Login</p>
       <div class="field is-grouped is-grouped-centered">
-        <div class="control has-icons-left has-icons-right">
-          <input style="width:20em;" class="input" type="username" placeholder="username" />
-          <span class="icon is-small is-left">
+        <form v-on:submit="login" style="padding: 1em;">
+
+        <div class="field">
+          <div class="control has-icons-left">
+            <input v-model="username" style="width:20em;" class="input" type="username" placeholder="Username" />
+            <span class="icon is-small is-left">
             <i class="fas fa-user"></i>
           </span>
+          </div>
         </div>
-      </div>
 
-      <div class="field is-grouped is-grouped-centered">
-        <div class="control has-icons-left has-icons-right">
-          <input style="width:20em;" class="input" type="password" placeholder="password" />
-          <span class="icon is-small is-left">
+        <div class="field">
+          <div class="control has-icons-left">
+            <input v-model="password" style="width:20em;" class="input" type="password" placeholder="Password" />
+            <span class="icon is-small is-left">
             <i class="fas fa-lock"></i>
           </span>
+          </div>
         </div>
-      </div>
+        
+        <div class="field is-grouped is-grouped-centered">
+          <div class="control">
+            <div class="control">
+              <button id = "submit" class="button is-link" type="submit">Submit</button>
+            </div>
+          </div>
+        
+          <div class="control">
+            <a href="./" class="button is-link is-light">Cancel</a>
+          </div>
+        </div>
 
-      <div class="field is-grouped is-grouped-centered">
-        <div class="control">
-          <button class="button is-link">Submit</button>
-        </div>
-        <div class="control">
-          <button class="button is-link is-light">Cancel</button>
-        </div>
-      </div>
+      </form>
+      <p class="help is-danger">{{ error }}</p>
+    </div>
     </ul>
   </div>
 </template>
 
 <script>
-export default {};
+export default {
+  data: () => ({
+    username: "",
+    password: "",
+    error: ""
+  })
+}
 </script>
 
-<style scoped>
+<style>
 </style>
