@@ -32,5 +32,5 @@ export async function api(url, data)
 }
 
 export const User = {
-    id: null
+    id: 0
 }
