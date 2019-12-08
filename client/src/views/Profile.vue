@@ -1,51 +1,51 @@
 <template>
-<div>
-  <h1 class = "is-size-1">
-      My Profile
-  </h1>
+  <div class="profile">
+    <section class="hero is-danger">
+      <div class="hero-body">
+        <div class="container">
+          <h1 class="title">My Profile</h1>
+          <h2 class="subtitle">Welcome, {{ username }}</h2>
+        </div>
+      </div>
+    </section>
 
-  <div class="columns">
-    <div class="column is-one-quater">
-      <ul class="panel">
-        <p class="panel-heading">
-          Health Statistics
-        </p>
-      </ul>
-
-      <ul class = "panel">
-        <p class = "panel-heading">
-          Exercise Log
-        </p>
-      </ul>
-    </div>
-
-    <div class="column">
-      <ul class="panel">
-        <p class="panel-heading">
-          Friends
-        </p>
-      </ul>
-    </div>
+  <div>
+    <ul class="panel">
+      <p class="panel-heading">Exercises</p>
+        <li v-for="(p, i) in userData.ExerciseLog" :key="i" 
+          class="panel-block">
+          {{p.name}}
+        </li>
+    </ul>
   </div>
-
+    
 </div>
 </template>
 
-
 <script>
-import { App_Client, App_Server} from '../models/Profile';
+import { App_Server } from "../models/Profile";
 
 export default {
-  data:() => ({
-    profile: App_Client,
-  }),
-  created()
+  data: () => ({
+    userData: {}
+    }),
+  async created() {
+    this.userData = await App_Server.Get_User_Data();
+  },
+  methods:
   {
-    this.My_Exercises = App_Server.Get_Exercise_Log();
+    addFriend()
+    {
+
+    },
+    addExercise()
+    {
+
+    }
   }
-}
+};
+
 </script>
 
 <style>
-
 </style>
