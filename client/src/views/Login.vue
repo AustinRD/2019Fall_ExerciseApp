@@ -3,7 +3,7 @@
     <ul class="panel">
       <p class="panel-heading">Login</p>
       <div class="field is-grouped is-grouped-centered">
-        <form v-on:submit="login" style="padding: 1em;">
+        <form @submit.prevent="login" style="padding: 1em;">
 
         <div class="field">
           <div class="control has-icons-left">
@@ -43,13 +43,20 @@
 </template>
 
 <script>
+import { Profile_Server } from '../models/Profile'
+
 export default {
   data: () => ({
     username: "",
     password: "",
     error: ""
-  })
-}
+  }),
+  methods: {
+    login() {
+      Profile_Server.Login(this.username, this.password);
+    }
+  }
+};
 </script>
 
 <style>

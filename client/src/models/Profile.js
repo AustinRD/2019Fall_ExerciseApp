@@ -3,6 +3,12 @@ import $router from "../router/index";
 
 export const Profile_Server = {
     User,
+    async Login(username, password)
+    {
+        const { id } = await api('Login', {username, password} )
+        User.id = id;
+        $router.push( {name: 'profile'})
+    },
     Get_Exercise()
     {
         return api('exerciseLog');

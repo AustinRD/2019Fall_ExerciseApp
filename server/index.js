@@ -1,14 +1,20 @@
 const express = require('express');
-
-const users = require('./controllers/users');
-const friends = require('./controllers/friends');
-const exercise = require('./controllers/exercise');
+const userController = require('./controllers/users');
+const profileController = require('./controllers/Profile');
 
 const app = express();
-const port = 3000;
+const port = process.env.PORT || 3000;
+
+app.use(function (req, res, next) {
+    res.header("Access-Control-Allow-Origin", "*"); // update to match the domain you will make the request from
+    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept, Authorization");
+    next();
+});
 
 app
-    .use('/users', users)
+    .use(express.json())
+    .use('/users', userController)
+    .use('./profile', profileController)
     .get('/port', (req,res) => res.send("Using port: " + port));
 
 app.listen(port, () => console.log(`Running on http://localhost:${port}`));

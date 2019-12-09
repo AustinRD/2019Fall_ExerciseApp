@@ -23,14 +23,14 @@
 </template>
 
 <script>
-import { App_Server } from "../models/Profile";
+import { Profile_Server } from "../models/Profile";
 
 export default {
   data: () => ({
     userData: {}
     }),
   async created() {
-    this.userData = await App_Server.Get_User_Data();
+    this.userData = await Profile_Server.Get_User_Data();
   },
   methods:
   {
