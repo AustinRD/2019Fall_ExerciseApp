@@ -1,5 +1,4 @@
 const express = require('express');
-const userController = require('./controllers/users');
 const profileController = require('./controllers/Profile');
 
 const app = express();
@@ -13,7 +12,6 @@ app.use(function (req, res, next) {
 
 app
     .use(express.json())
-    .use('/users', userController)
     .use('./profile', profileController)
     .get('/port', (req,res) => res.send("Using port: " + port));
 
