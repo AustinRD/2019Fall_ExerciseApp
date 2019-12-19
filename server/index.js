@@ -13,6 +13,7 @@ app.use(function (req, res, next) {
 app
     .use(express.json())
     .use('./profile', profileController)
+    .use('./login', profileController)
     .get('/port', (req,res) => res.send("Using port: " + port));
 
 app.listen(port, () => console.log(`Running on http://localhost:${port}`));

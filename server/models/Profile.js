@@ -1,5 +1,3 @@
-const { CustomError } = require('./CustomError');
-
 module.exports.Profile = {
     profileData: [
         {
@@ -87,5 +85,14 @@ module.exports.Profile = {
             //Wrong username
             return null;
         }
+    },
+    ChangePassword(username, prevPassword, newPassword)
+    {
+        
+    },
+    addUser(username, password, firstname, lastname, height, weight, gender, age)
+    {
+        
     }
+
 }

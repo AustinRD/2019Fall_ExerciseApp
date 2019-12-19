@@ -5,9 +5,10 @@ export const Profile_Server = {
     User,
     async Login(username, password)
     {
-        const { id } = await api('', {username, password} )
+        const { id } = await api('/login', {username, password} )
         User.id = id;
         $router.push( {name: 'profile'})
+        return id;
     },
     Get_Exercise()
     {

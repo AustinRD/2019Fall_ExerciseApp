@@ -3,7 +3,7 @@
     <ul class="panel">
       <p class="panel-heading">Login</p>
       <div class="field is-grouped is-grouped-centered">
-        <form @submit.prevent="login" style="padding: 1em;">
+        <form @submit="login" style="padding: 1em;">
 
         <div class="field">
           <div class="control has-icons-left">
@@ -53,7 +53,14 @@ export default {
   }),
   methods: {
     login() {
-      Profile_Server.Login(this.username, this.password);
+      try{
+        const userId = Profile_Server.Login(this.username, this.password);
+        return userId;
+      }
+      catch(error)
+      {
+        error;
+      }
     }
   }
 };

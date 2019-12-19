@@ -55,6 +55,7 @@
 export default {
   data() {
     return {
+      signedIn: true,
       isOpen: false
     };
   }

@@ -1,9 +1,9 @@
-const api_root = "http://localhost:3000/userData/";
+const api_root = "http://localhost:3000";
 
 export async function api(url, data)
 {
     let response;
-    const headers = { authorization: "bearer " + User.id };
+    const headers = { 'Authorization': `Bearer  + ${User.id}` };
 
     if(data)
     {
