@@ -13,7 +13,7 @@
   <div class = "column is-one-quater">
     <ul class="panel">
       <p class="panel-heading">Exercises</p>
-      <vSelect label = "addExercise" placeholder = "Add an exercise"></vSelect>
+      <vSelect label = "addExercise" :options="exerciseLog" @search="searchExercises($event)" placeholder = "Add an exercise"></vSelect>
         <li v-for="(p, i) in userData.ExerciseLog" :key="i" 
           class="panel-block">
           {{p.name}}
@@ -43,6 +43,7 @@ import 'vue-select/dist/vue-select.css';
 export default {
   data: () => ({
     userData: [],
+    exerciseLog: [],
     }),
   
   async created() {
@@ -63,6 +64,10 @@ export default {
   {
     vSelect
   },
+  async searchExercises(input)
+  {
+    this.exerciseLog = await Profile_Server.Get_Exercise(input);
+  }
 
 };
 

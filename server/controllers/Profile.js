@@ -13,4 +13,10 @@ app.post('/login', (req, res, next) => {
     .catch(next)
 });
 
+app.post('/searchExercises', (req, res, next) => {
+    userData.search(req.body.input)
+    .then(x => res.send(x))
+    .catch(next)
+});
+
 module.exports = app;

@@ -10,9 +10,10 @@ export const Profile_Server = {
         $router.push( {name: 'profile'})
         return id;
     },
-    Get_Exercise()
+    async Get_Exercise(data)
     {
-        return api('exerciseLog');
+        const log = await api('exerciseLog', data);
+        return log;
     }, 
     Get_User()
     {

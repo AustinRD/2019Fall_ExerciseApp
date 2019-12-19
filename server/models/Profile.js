@@ -93,6 +93,11 @@ module.exports.Profile = {
     addUser(username, password, firstname, lastname, height, weight, gender, age)
     {
         
+    },
+    async searchExercises(input)
+    {
+        var currentLog = profileData[0].exerciseLog;
+        
     }
 
 }
